@@ -10,22 +10,25 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Esteban&display=swap');
 
-:root{
-    --bg-light: #fafafa;
-    --text-light: #fff;
-    --table-light: rgba(255, 255, 255, 0.6);
-    --bg-dark: #282828;
-    --text-dark: #000;
-    --table-dark: rgba(56, 56, 56, 0.8);
-    --table-dark-hover: #484848;
-    --purple: #9883e5;
-    --purple-hover: rgb(167, 147, 240);
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.szerzo {
+    margin-top: 40px;
+    text-align: center;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.idezet {
+    text-align: center;
+    font-family: 'Esteban', sans-serif;
+    font-size: large;
+    margin-bottom: 20px;
+    width: 40%;
 }
 
 body {
@@ -68,14 +71,6 @@ th {
     box-shadow:  0 2px 14px -14px rgba(0, 0, 0, 0.8);
 }
 
-tr:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.name:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
 td, th {
     width: 100px;
     height: 4em;
@@ -83,7 +78,7 @@ td, th {
     cursor:default;
 }
 
-td {
+td:first-letter {
     text-transform: capitalize;
 }
 
@@ -99,8 +94,7 @@ table {
     position: relative;
   }
 
-  td:hover::after,
-  th:hover::after {
+  td:hover::after {
     content: "";
     position: absolute;
     background-color: rgba(255, 255, 255, 0.2);
@@ -111,34 +105,69 @@ table {
     z-index: -1;
   }
 
-@media (max-width: 1100px) {
-    table {
-        width: 80%;
-        border-collapse: separate;
-        border-spacing: 0 0.5em;
+.icon {
+    display: none;
+}
+
+.icon-head1 img {
+    width: 20px;
+}
+
+.icon-head2 img {
+    width: 24px;
+}
+.icon-head3 img {
+    width: 20px;
+}
+.icon-head4 img {
+    width: 20px;
+}
+.icon-head5 img {
+    width: 24px;
+}
+
+@media (max-width: 850px) {
+
+    .idezet {
+        font-size: 14px;
+        width: 90%;
     }
+
+    h1 {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .szerzo {
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 14px;
+        width: 90%;
+    }
+
+    th {
+        font-size: 12px;
+    }
+
 }
 
 @media (max-width: 650px) {
-    table {
-        width: 90%;
-        border-collapse: separate;
-        border-spacing: 0 1em;
-    }
+
 }
 
 @media (max-width: 420px) {
-    td, th {
-        width: 80px;
-        height: 4em;
-        padding-left: 10px;
-        text-align: center;
-        cursor:default;
+    .text-head {
+        display: none;
     }
 
-}
+    .icon {
+        display: table-cell;    
+    }
 
-@keyframes hover {
-    from {background-color: rgba(0, 0, 0, 0);}
-    to {background-color: var(--purple-hover);}
-  }
+    table {
+        font-size: 14px;
+        width: 100%;
+    }
+}

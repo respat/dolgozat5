@@ -16,6 +16,8 @@ window.addEventListener('load', () => {
     getShips();
 });
 
+
+
 function init() {
     const tbody = document.querySelector('#tbody');
 };
